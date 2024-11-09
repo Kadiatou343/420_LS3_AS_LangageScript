@@ -9,7 +9,7 @@ class User:
 #les getters
 
     def get_id(self):
-        return self.id
+        return self.__id
 
     def get_username(self):
         return self.__username
