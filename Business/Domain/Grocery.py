@@ -1,4 +1,4 @@
-from Business.Domain.Produits import Produit
+from Business.Domain.Products import Produit
 
 
 class Grocery(Produit):
