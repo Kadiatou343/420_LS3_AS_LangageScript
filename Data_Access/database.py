@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Products(
                 ProdName TEXT NOT NULL,
                 UnitPrice REAL CHECK(UnitPrice > 0),
                 QtyPerPack INTEGER CHECK(QtyPerPack > 0), -- La quantite pour chaque groupe d'un produit (un carton ou un rack de produits)
-                Expiration DATETIME2(7) NOT NULL, -- La date d'expiration ou le bestbefore du produit
+                Expiration INTEGER NOT NULL, -- L'année d'expiration ou le bestbefore du produit
                 ProductType TEXT NOT NULL CHECK(ProductType = 'Beverage' OR ProductType = 'Treat' OR ProductType = 'Grocery'),
                 TreatType TEXT CHECK(TreatType = 'Bonbon' OR TreatType = 'Biscuit'), -- pour les produits de type treat
                 Origine TEXT, -- pour les produits de type grocery (l'origine du produit)
