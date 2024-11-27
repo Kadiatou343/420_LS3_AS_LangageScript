@@ -15,6 +15,7 @@
         <div class="fm">
             <form action="{{ '/updateTreat' if treat is defined else '/addTreat' }}" method="post">
                 <table>
+                    <input type="hidden" name="id" value="{{ treat.get_id() if treat is defined else '' }}">
                     <tr>
                         <td><label for="prodName">Nom du produit:</label></td>
                         <td><input type="text" name="prodName" id="prodName" required value="{{ treat.get_product_name() if treat is defined else '' }}"></td>

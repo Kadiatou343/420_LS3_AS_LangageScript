@@ -14,9 +14,9 @@
     <div class="fm-container">
         <h1>{{ 'Modification de beverage' if bev is defined else 'Ajout de beverage' }}</h1>
         <div class="fm">
-            <form action="{{ '/editBev' if bev is defined else '/addBeverage' }}" method="post">
+            <form action="{{ '/updateBeverage' if bev is defined else '/addBeverage' }}" method="post">
                 <table>
-                    <input type="hidden" name="bevId" value="{{ bev.get_id() if bev is defined else '' }}">
+                    <input type="hidden" name="id" value="{{ bev.get_id() if bev is defined else '' }}">
                     <tr>
                         <td><label for="prodName">Nom du produit:</label></td>
                         <td><input type="text" name="prodName" id="prodName" required value="{{ bev.get_product_name() if bev is defined else '' }}"></td>

@@ -11,32 +11,34 @@
 </head>
 <body>
     <div class="fm-container">
+        <h1>{{ 'Modification de Grocery' if grocery is defined else 'Ajout de Grocery' }}</h1>
         <div class="fm">
-            <form action="/addGrocery" method="post">
+            <form action="{{ '/updateGrocery' if grocery is defined else '/addGrocery' }}" method="post">
                 <table>
+                    <input type="hidden" name="id" value="{{ grocery.get_id() if grocery is defined else '' }}">
                     <tr>
                         <td><label for="prodName">Nom du produit:</label></td>
-                        <td><input type="text" name="prodName" id="prodName" required></td>
+                        <td><input type="text" name="prodName" id="prodName" required value="{{ grocery.get_product_name() if grocery is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="unitPrice">Prix Unitaire:</label></td>
-                        <td><input type="number" step="0.01" name="unitPrice" id="unitPrice" required></td>
+                        <td><input type="number" step="0.01" name="unitPrice" id="unitPrice" required value="{{ grocery.get_unit_price() if grocery is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="qtyPerPack">Qte pour un paquet:</label></td>
-                        <td><input type="number" name="qtyPerPack" id="qtyPerPack" required></td>
+                        <td><input type="number" name="qtyPerPack" id="qtyPerPack" required value="{{grocery.get_qty_per_pack() if grocery is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="expYear">Annee Expiration:</label></td>
-                        <td><input type="text" name="expYear" id="expYear" required min="4" max="4"></td>
+                        <td><input type="text" name="expYear" id="expYear" required min="4" max="4" value="{{grocery.get_expiration() if grocery is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="origine">Origine:</label></td>
-                        <td><input type="text" name="origine" id="origine" required></td>
+                        <td><input type="text" name="origine" id="origine" required  value="{{ grocery.get_origine() if grocery is defined else '' }}"></td>
                     </tr>
                 </table>
                 <div class="sbt">
-                    <div><button type="submit" class="bttn">Ajouter Epicerie</button>
+                    <div><button type="submit" class="bttn">{{'Modifier Epicerie' if grocery is defined else 'Ajouter Epicerie' }}</button>
                 </div>
             </div>
             </form>

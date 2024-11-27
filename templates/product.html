@@ -44,7 +44,7 @@
                             <td>{{ grocery.get_origine() }}</td>
                             <td>
                                 <a href="/editGrocery/{{ grocery.get_id() }}" class="bt"><i class="bi bi-pencil-square"></i></a>
-                                <a href="./delete.html" class="bt"><i class="bi bi-trash3"></i></a>
+                                <a href="/deleteGrocery/{{ grocery.get_id() }}" class="bt"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -80,7 +80,7 @@
                             <td>{{ beverage.get_beverage_type() }}</td>
                             <td>
                                 <a href="/editBeverage/{{ beverage.get_id() }}" class="bt"><i class="bi bi-pencil-square"></i></a>
-                                <a href="./delete.html" class="bt"><i class="bi bi-trash3"></i></a>
+                                <a href="/deleteBeverage/{{ beverage.get_id() }}" class="bt"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -116,7 +116,7 @@
                             <td>{{ treat.get_treat_type() }}</td>
                             <td>
                                 <a href="/editTreat/{{ treat.get_id() }}" class="bt"><i class="bi bi-pencil-square"></i></a>
-                                <a href="./delete.html" class="bt"><i class="bi bi-trash3"></i></a>
+                                <a href="/deleteTreat/{{ treat.get_id() }}" class="bt"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                         {% endfor %}
