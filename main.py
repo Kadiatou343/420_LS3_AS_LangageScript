@@ -90,17 +90,17 @@ def add_prod():
 
 
 @app.route('/editBeverage/<int:id>')
-def edit_prod(id):
+def edit_beverage(id):
     bev = bev_dao.get_by_id(id)
     return render_template('addBeverage.html', bev=bev)
 
 @app.route('/editTreat/<int:id>')
-def edit_prod(id):
+def edit_treat(id):
     treat = treat_dao.get_by_id(id)
     return render_template('addBeverage.html', treat=treat)
 
 @app.route('/editGrocery/<int:id>')
-def edit_prod(id):
+def edit_grocery(id):
     grocery = groc_dao.get_by_id(id)
     return render_template('addBeverage.html', grocery=grocery)
 
