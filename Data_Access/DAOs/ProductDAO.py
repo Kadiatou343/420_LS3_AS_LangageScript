@@ -6,9 +6,11 @@ from Data_Access.DAOs.UserDAO import UserDAO
 
 class ProductDAO:
     def __init__(self):
-        self.connection = sqlite3.connect('convenience_store_db.db')
+        self.connection = sqlite3.connect('../convenience_store_db.db')
         self.cursor = self.connection.cursor()
         self.userDAO = UserDAO()
+
+
 
     def get_all_products(self):
         self.cursor.execute("SELECT Id, ProdName, UnitPrice, QtyPerPack, Expiration, UserId FROM Products")

@@ -1,3 +1,6 @@
+import uuid
+
+
 class User:
     def __init__(self, id, username, password_hash, role):
         self.__id = id
