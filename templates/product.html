@@ -19,7 +19,7 @@
             <div class="table-content">
                 <div class="table-title">
                     <h3>Liste des epiceries</h3>
-                    <a href="./add.html" class="bttn">Ajouter produit</a>
+                    <a href="/grocery" class="bttn">Ajouter épicerie</a>
                 </div>
                 <table class="table table-hover">
                     <thead>
@@ -43,8 +43,8 @@
                             <td>{{ grocery.get_expiration() }}</td>
                             <td>{{ grocery.get_origine() }}</td>
                             <td>
-                                <a href="./edit.html" class="bttn">Modifier</a>
-                                <a href="./delete.html" class="bttn">Supprimer</a>
+                                <a href="/editGrocery/{{ grocery.get_id() }}" class="bt"><i class="bi bi-pencil-square"></i></a>
+                                <a href="./delete.html" class="bt"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -55,7 +55,7 @@
             <div class="table-content">
                 <div class="table-title">
                     <h3>Liste des beverages</h3>
-                    <a href="./add.html" class="bttn">Ajouter produit</a>
+                    <a href="/beverage" class="bttn">Ajouter Beverage</a>
                 </div>
                 <table class="table table-hover">
                     <thead>
@@ -79,8 +79,8 @@
                             <td>{{ beverage.get_expiration() }}</td>
                             <td>{{ beverage.get_beverage_type() }}</td>
                             <td>
-                                <a href="./edit.html" class="bttn">Modifier</a>
-                                <a href="./delete.html" class="bttn">Supprimer</a>
+                                <a href="/editBeverage/{{ beverage.get_id() }}" class="bt"><i class="bi bi-pencil-square"></i></a>
+                                <a href="./delete.html" class="bt"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -91,7 +91,7 @@
             <div class="table-content">
                 <div class="table-title">
                     <h3>Liste des sucreries</h3>
-                    <a href="./add.html" class="bttn">Ajouter produit</a>
+                    <a href="/treat" class="bttn">Ajouter sucrerie</a>
                 </div>
                 <table class="table table-hover">
                     <thead>
@@ -115,8 +115,8 @@
                             <td>{{ treat.get_expiration() }}</td>
                             <td>{{ treat.get_treat_type() }}</td>
                             <td>
-                                <a href="./edit.html" class="bttn">Modifier</a>
-                                <a href="./delete.html" class="bttn">Supprimer</a>
+                                <a href="/editTreat/{{ treat.get_id() }}" class="bt"><i class="bi bi-pencil-square"></i></a>
+                                <a href="./delete.html" class="bt"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                         {% endfor %}

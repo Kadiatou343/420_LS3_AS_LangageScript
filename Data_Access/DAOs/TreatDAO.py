@@ -13,7 +13,7 @@ class TreatDAO(ProductDAO):
         (ProdName, UnitPrice, QtyPerPack, Expiration, ProductType, TreatType, UserId) 
         VALUES (?, ?, ?, ?, ?, ?, ?)''', (treat.get_product_name(), treat.get_unit_price(),
                                         treat.get_qty_per_pack(), treat.get_expiration(), "Treat",
-                                          treat.get_treat_type(), treat.get_user().get_id(),))
+                                          treat.get_treat_type(), 1,))
         self.connection.commit()
 
 

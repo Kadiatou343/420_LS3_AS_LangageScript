@@ -13,7 +13,7 @@ class BeverageDAO(ProductDAO):
         (ProdName, UnitPrice, QtyPerPack, Expiration, ProductType, BeverageType, UserId) 
         VALUES (?, ?, ?, ?, ?, ?, ?)''', (beverage.get_product_name(), beverage.get_unit_price(),
                                        beverage.get_qty_per_pack(), beverage.get_expiration(),
-                                          "Beverage", beverage.get_beverage_type(), beverage.get_user().get_id(),))
+                                          "Beverage", beverage.get_beverage_type(), 1,))
         self.connection.commit()
 
 

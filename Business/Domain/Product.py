@@ -1,11 +1,10 @@
 class Product:
-    def __init__(self, id, product_name, unit_price, qty_per_pack, expiration, user):
+    def __init__(self, id, product_name, unit_price, qty_per_pack, expiration):
         self.__id = id
         self.__product_name = product_name
         self.__unit_price = unit_price
         self.__qty_per_pack = qty_per_pack
         self.__expiration = expiration
-        self.__user = user
 
 
     #les getters

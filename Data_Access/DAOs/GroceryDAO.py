@@ -12,7 +12,7 @@ class GroceryDAO(ProductDAO):
            (ProdName, UnitPrice, QtyPerPack, Expiration, ProductType, Origine, UserId) 
            VALUES (?, ?, ?, ?, ?, ?, ?)''', (grocery.get_product_name(), grocery.get_unit_price(),
                                           grocery.get_qty_per_pack(), grocery.get_expiration() ,
-                                             "Grocery", grocery.get_origine(),grocery.get_user().get_id(),))
+                                             "Grocery", grocery.get_origine(),1,))
         self.connection.commit()
 
     def update_grocery(self, grocery):

@@ -42,8 +42,10 @@
 
 .fm-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .fm {
@@ -59,7 +61,7 @@
 
 .sbt {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .sbt button {
@@ -82,6 +84,21 @@ a {
 .bttn:hover{
     background: white;
     color: #F95151;
+    padding: 3px 8px;
+    border: 2px solid;
+}
+
+.bt {
+    background: #525E76;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.bt:hover {
+    background: white;
+    color: #525E76;
     padding: 3px 8px;
     border: 2px solid;
 }
