@@ -51,5 +51,6 @@ class BeverageDAO(ProductDAO):
         beverages = []
         for bev in result:
             bev = Beverage(bev[0], bev[1], bev[2], bev[3], bev[4], bev[5])
+            beverages.append(bev)
 
         return beverages

@@ -6,7 +6,7 @@ from Data_Access.DAOs.UserDAO import UserDAO
 
 class ProductDAO:
     def __init__(self):
-        self.connection = sqlite3.connect('../convenience_store_db.db')
+        self.connection = sqlite3.connect('./Data_Access/convenience_store_db.db', check_same_thread=False)
         self.cursor = self.connection.cursor()
         self.userDAO = UserDAO()
 

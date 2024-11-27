@@ -34,24 +34,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for grocery in groceries %}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Jhon</td>
-                            <td>Doe</td>
-                            <td>Info</td>
-                            <td>OUi</td>
-                            <td>Non</td>
-                            <td>Allez</td>
+                            <th scope="row">{{ grocery.get_id() }}</th>
+                            <td>{{ grocery.get_product_name() }}</td>
+                            <td>{{ grocery.get_qty_per_pack() }}</td>
+                            <td>{{ grocery.get_unit_price() }}</td>
+                            <td>{{ grocery.get_expiration() }}</td>
+                            <td>{{ grocery.get_origine() }}</td>
+                            <td>
+                                <a href="./edit.html" class="bttn">Modifier</a>
+                                <a href="./delete.html" class="bttn">Supprimer</a>
+                            </td>
                         </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Jhon</td>
-                            <td>Doe</td>
-                            <td>Info</td>
-                            <td>OUi</td>
-                            <td>Non</td>
-                            <td>Allez</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -74,24 +70,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for beverage in beverages %}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Jhon</td>
-                            <td>Doe</td>
-                            <td>Info</td>
-                            <td>OUi</td>
-                            <td>Non</td>
-                            <td>Allez</td>
+                            <th scope="row">{{ beverage.get_id() }}</th>
+                            <td>{{ beverage.get_product_name() }}</td>
+                            <td>{{ beverage.get_qty_per_pack() }}</td>
+                            <td>{{ beverage.get_unit_price() }}</td>
+                            <td>{{ beverage.get_expiration() }}</td>
+                            <td>{{ beverage.get_beverage_type() }}</td>
+                            <td>
+                                <a href="./edit.html" class="bttn">Modifier</a>
+                                <a href="./delete.html" class="bttn">Supprimer</a>
+                            </td>
                         </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Jhon</td>
-                            <td>Doe</td>
-                            <td>Info</td>
-                            <td>OUi</td>
-                            <td>Non</td>
-                            <td>Allez</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -114,24 +106,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for treat in treats %}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Jhon</td>
-                            <td>Doe</td>
-                            <td>Info</td>
-                            <td>OUi</td>
-                            <td>Non</td>
-                            <td>Allez</td>
+                            <th scope="row">{{ treat.get_id() }}</th>
+                            <td>{{ treat.get_product_name() }}</td>
+                            <td>{{ treat.get_unit_price() }}</td>
+                            <td>{{ treat.get_qty_per_pack() }}</td>
+                            <td>{{ treat.get_expiration() }}</td>
+                            <td>{{ treat.get_treat_type() }}</td>
+                            <td>
+                                <a href="./edit.html" class="bttn">Modifier</a>
+                                <a href="./delete.html" class="bttn">Supprimer</a>
+                            </td>
                         </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Jhon</td>
-                            <td>Doe</td>
-                            <td>Info</td>
-                            <td>OUi</td>
-                            <td>Non</td>
-                            <td>Allez</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
