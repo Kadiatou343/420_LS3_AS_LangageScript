@@ -11,32 +11,33 @@
 </head>
 <body>
     <div class="fm-container">
+        <h1>{{ 'Modification de sucrerie' if treat is defined else 'Ajout de sucrerie' }}</h1>
         <div class="fm">
-            <form action="/addTreat" method="post">
+            <form action="{{ '/updateTreat' if treat is defined else '/addTreat' }}" method="post">
                 <table>
                     <tr>
                         <td><label for="prodName">Nom du produit:</label></td>
-                        <td><input type="text" name="prodName" id="prodName" required></td>
+                        <td><input type="text" name="prodName" id="prodName" required value="{{ treat.get_product_name() if treat is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="unitPrice">Prix Unitaire:</label></td>
-                        <td><input type="number" step="0.01" name="unitPrice" id="unitPrice" required></td>
+                        <td><input type="number" step="0.01" name="unitPrice" id="unitPrice" required value="{{ treat.get_unit_price() if treat is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="qtyPerPack">Qte pour un paquet:</label></td>
-                        <td><input type="number" name="qtyPerPack" id="qtyPerPack" required></td>
+                        <td><input type="number" name="qtyPerPack" id="qtyPerPack" required value="{{ treat.get_qty_per_pack() if treat is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="expYear">Annee Expiration:</label></td>
-                        <td><input type="text" name="expYear" id="expYear" required min="4" max="4"></td>
+                        <td><input type="text" name="expYear" id="expYear" required min="4" max="4" value="{{ treat.get_expiration() if treat is defined else '' }}"></td>
                     </tr>
                     <tr>
                         <td><label for="typeTreat">Type sucrerie:</label></td>
-                        <td><input type="text" name="treatType" id="typeTreat" required></td>
+                        <td><input type="text" name="treatType" id="typeTreat" required value="{{ treat.get_treat_type() if treat is defined else '' }}"></td>
                     </tr>
                 </table>
                 <div class="sbt">
-                    <div><button type="submit" class="bttn">Ajouter Sucrerie</button>
+                    <div><button type="submit" class="bttn">{{ 'Modifier Sucrerie' if treat is defined else 'Ajouter Sucrerie' }}</button>
                 </div>
             </div>
             </form>
