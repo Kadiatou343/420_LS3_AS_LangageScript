@@ -97,12 +97,12 @@ def edit_beverage(id):
 @app.route('/editTreat/<int:id>')
 def edit_treat(id):
     treat = treat_dao.get_by_id(id)
-    return render_template('addBeverage.html', treat=treat)
+    return render_template('addTreat.html', treat=treat)
 
 @app.route('/editGrocery/<int:id>')
 def edit_grocery(id):
     grocery = groc_dao.get_by_id(id)
-    return render_template('addBeverage.html', grocery=grocery)
+    return render_template('addGrocery.html', grocery=grocery)
 
 
 if __name__ == '__main__':
