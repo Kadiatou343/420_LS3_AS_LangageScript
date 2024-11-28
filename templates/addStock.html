@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Title</title>
+    <style>
+        body { background: #DFE4DE; }
+    </style>
+</head>
+<body>
+    <div class="fm-container">
+        <h1>{{ 'Ajout de produit en stock' if stock is defined else 'Modification de produit en stock'}}</h1>
+        <div class="fm">
+            <form action="{{ '/addStock' if stock is not defined else '/updateStock' }}" method="post">
+                <table>
+                    <input type="hidden" name="id" value="{{ stock.get_id() if stock is defined else '' }}">
+                    <input type="hidden" name="prodId" value="{{ prod.get_id() if prod is defined else '' }}">
+                    <tr>
+                        <td><label for="prodName">Nom du produit:</label></td>
+                        <td><input type="text" name="prodName" id="prodName" required value="{{ prod.get_product_name() if prod is defined else '' }}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="stockDispo">Stock Disponible</label></td>
+                        <td><input type="number" step="1" name="stock" id="stockDispo" value="{{ stock.get_stock() if stock is defined else '' }}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="storeQty">Quantité en magasin</label></td>
+                        <td><input type="number" step="1" name="storeQty" id="storeQty" value="{{ stock.get_store_qty() if stock is defined else '' }}"></td>
+                    </tr>
+                </table>
+                <div class="sbt">
+                    <div><button type="submit" class="bttn">{{ 'Modifier' if stock is defined else 'Ajouter' }}</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

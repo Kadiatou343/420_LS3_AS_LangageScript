@@ -16,34 +16,32 @@
     <div class="main-container">
         <div class="table-content">
             <div class="table-title">
-                <h3>Liste des epiceries</h3>
-                <a href="./add.html" class="bttn">Ajouter produit</a>
+                <h3>Stock du magasin</h3>
+                <a href="/prod" class="bttn">Voir produits</a>
             </div>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nom du produit</th>
-                        <th scope="col">Quantite en stock</th>
-                        <th scope="col">Quantite en magasin</th>
+                        <th scope="col">Stock disponible</th>
+                        <th scope="col">Quantité en magasin</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for stock in stocks %}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Jhon</td>
-                        <td>Doe</td>
-                        <td>Info</td>
-                        <td>Allez</td>
+                        <th scope="row">{{ stock.get_id() }}</th>
+                        <td>{{ prod_dao.get_product_by_id(stock.get_product()).get_product_name() }}</td>
+                        <td>{{ stock.get_stock() }}</td>
+                        <td>{{ stock.get_store_qty() }}</td>
+                        <td>
+                            <a href="/editStock/{{ stock.get_id() }}" class="bt"><i class="bi bi-pencil-square"></i></a>
+                            <a href="/deleteStock/{{ stock.get_id() }}" class="bt"><i class="bi bi-trash3"></i></a>
+                        </td>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Jhon</td>
-                        <td>Doe</td>
-                        <td>Info</td>
-                        <td>Allez</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

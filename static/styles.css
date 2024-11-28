@@ -109,7 +109,7 @@ h2 {
     font-size: 1.5em;
 }
 
-h3 {
+h3 , h1{
     color: #525E76;
     font-weight: bold;
 }

@@ -1,12 +1,12 @@
 class ProductsInStock:
 
-
     def __init__(self, id, stock, store_qty, product):
       self.__id = id
       self.__stock = stock
       self.__store_qty = store_qty
       self.__product = product
 
+    # Les getters
     def get_id(self):
         return self.__id
 
@@ -18,7 +18,6 @@ class ProductsInStock:
 
     def get_product(self):
         return self.__product
-
 
     #les setters
     def set_id(self, id):
