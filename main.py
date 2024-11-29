@@ -2,6 +2,8 @@ import sqlite3
 
 import flask
 from flask import Flask, render_template, request, redirect, url_for
+import pandas as pd
+import matplotlib.pyplot as plt
 
 from Business.Domain.Beverage import Beverage
 from Business.Domain.Grocery import Grocery
@@ -245,6 +247,30 @@ def del_stock(id):
     prod_stock_dao.delete_stock(prod_stock)
 
     return redirect(url_for('stock'))
+
+@app.route('/graphe')
+def graphe():
+    connection = sqlite3.connect("./Data_Access/convenience_store_db.db")
+
+    df = pd.read_sql_query(
+        '''SELECT Products.ProdName, ProductsInStock.Stock, 
+        Products.UnitPrice, Products.Expiration FROM ProductsInStock 
+        JOIN Products ON ProductsInStock.ProductId = Products.Id''', connection)
+
+    connection.close()
+
+    plt.figure(figsize=(15, 10))
+    df.plot(x="ProdName", y="Stock", kind="bar", legend=False, color="skyblue")
+    plt.title("Le stock du magasin")
+    plt.xlabel("Nom du produit")
+    plt.ylabel("Stock Disponible")
+    plt.tight_layout()
+    # Sauvegarder le graphique dans le dossier 'static'
+    plot_path = "./static/plotImage.png"
+    plt.savefig(plot_path)
+    plt.close()
+
+    return render_template("graphe.html", plot_path=plot_path)
 
 # Demarrer l'application
 if __name__ == '__main__':

@@ -26,7 +26,7 @@
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Nom</th>
-                            <th scope="col">Qty paquet</th>
+                            <th scope="col">Qte par pack</th>
                             <th scope="col">Prix Unit</th>
                             <th scope="col">BB|Exp</th>
                             <th scope="col">Origine</th>
@@ -63,7 +63,7 @@
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Nom</th>
-                            <th scope="col">Qty paquet</th>
+                            <th scope="col">Qte par pack</th>
                             <th scope="col">Prix Unit</th>
                             <th scope="col">BB|Exp</th>
                             <th scope="col">Type Beverage</th>
@@ -100,7 +100,7 @@
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Nom</th>
-                            <th scope="col">Qty paquet</th>
+                            <th scope="col">Qte par pack</th>
                             <th scope="col">Prix Unit</th>
                             <th scope="col">BB|Exp</th>
                             <th scope="col">Type sucreries</th>
@@ -112,8 +112,8 @@
                         <tr>
                             <th scope="row">{{ treat.get_id() }}</th>
                             <td>{{ treat.get_product_name() }}</td>
-                            <td>{{ treat.get_unit_price() }}</td>
                             <td>{{ treat.get_qty_per_pack() }}</td>
+                            <td>{{ treat.get_unit_price() }}</td>
                             <td>{{ treat.get_expiration() }}</td>
                             <td>{{ treat.get_treat_type() }}</td>
                             <td>

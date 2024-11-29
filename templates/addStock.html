@@ -25,11 +25,11 @@
                         <td><input type="text" name="prodName" id="prodName" required value="{{ prod.get_product_name() if prod is defined else '' }}"></td>
                     </tr>
                     <tr>
-                        <td><label for="stockDispo">Stock Disponible</label></td>
+                        <td><label for="stockDispo">Stock Disponible (Packs)</label></td>
                         <td><input type="number" step="1" name="stock" id="stockDispo" value="{{ stock.get_stock() if stock is defined else '' }}"></td>
                     </tr>
                     <tr>
-                        <td><label for="storeQty">Quantité en magasin</label></td>
+                        <td><label for="storeQty">Unités en magasin</label></td>
                         <td><input type="number" step="1" name="storeQty" id="storeQty" value="{{ stock.get_store_qty() if stock is defined else '' }}"></td>
                     </tr>
                 </table>
